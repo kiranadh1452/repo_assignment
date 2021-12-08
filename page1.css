@@ -17,9 +17,6 @@ table {
 th, td {
     padding: 15px;
 }
-h1, h2 {
-    margin-left: 2% ;
-}
 body{
     background-color: #ffffff;
     color: #3f3f3f;
@@ -50,4 +47,7 @@ a:link{
 }
 a:hover{
     color: rgb(146, 146, 173);
+}
+hr{
+    color: white;
 }
