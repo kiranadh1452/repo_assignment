@@ -33,11 +33,12 @@ body{
 }
 #heading{
     display: inline-block;
-    background-image: url("./images/profile_bg.jpg");		
+    /* background-image: url("./images/profile_bg.jpg");	*/
+    background-color: rgb(171, 175, 175);	
     text-align: center;
     color: #ffffff;			
     float: left;
-    border: 1px solid black;
+    border: 0px solid black;
     height: 100%;
     width: 25%;			
 }
