@@ -5,20 +5,29 @@ table, td, th {
 
 table {
     border-collapse: collapse;
-    background-color: rgba(243, 239, 239, 0.63);
+    background-color: rgba(243, 239, 239, 0.808);
     
 }
-#tbl{
+#tbl{ /* This is the table formatting */
     float: left;
     width: 50%;
     margin-left: 2%;
 }
-
+#right_bar{
+    float:right;
+    text-align: center;
+    width:17%;
+    background-color: rgba(243, 239, 239, 0.808);
+    border: solid 1px rgba(0, 0, 0, 0.466);
+    margin-right: 2%;
+    margin-top: 2%;
+}
 th, td {
     padding: 15px;
 }
 body{
     background-color: #ffffff;
+    background-image: url("./images/diamond.jpg");	
     color: #3f3f3f;
     margin-top: 0px;
 }
