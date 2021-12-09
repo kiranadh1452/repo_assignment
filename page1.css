@@ -23,14 +23,19 @@ body{
     margin-top: 0px;
 }
 #heading{
-    display: table;
-      height: 100%;
+    display: inline-block;
     background-image: url("./images/profile_bg.jpg");		
     text-align: center;
     color: #ffffff;			
     float: left;
     border: 1px solid black;
+    height: 100%;
     width: 25%;			
+}
+/* Here, the line 32 doesn't work unless the height of html and body is also 100%. 
+   This is because parent's height is to defined. */
+html, body{
+    height: 100%;
 }
 img{
     width:15%;
