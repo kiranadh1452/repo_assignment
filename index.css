@@ -1,3 +1,4 @@
+
 table, td, th {  
     border: 1px solid rgb(147, 145, 151);
     text-align: left;
@@ -25,6 +26,15 @@ table {
     padding-bottom: 1%;
     font-style: bold;
 }
+#right_bar_title{
+    border-bottom: 1px solid black;
+    padding-bottom: 0.4em;
+}
+#right_bar_content{
+    border-collapse: collapse;
+    text-align: left;
+
+}
 th, td {
     padding: 15px;
 }
@@ -50,7 +60,7 @@ html, body{
     height: 100%;
 }
 img{
-    width:15%;
+    width:10%;
     margin-left: 1%;
     margin-right: 8%;
 }
