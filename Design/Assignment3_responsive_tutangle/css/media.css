@@ -2,7 +2,20 @@
     /* Styles */
 
     .left_sidebar, .right_sidebar{
-        display: none;
+        display: table;
+        width: 99%;
+        margin:1% 1%;
+    }
+    .search_list_text{
+        width: 100%;
+    }
+    .right_sidebar{
+        float: none;
+        margin: 0;
+    }
+    .mob_view_800{
+        float: left;
+        width: 100%;
     }
     .main_container{
         width: 100%;
@@ -23,15 +36,12 @@
     .notice span{
         display: none;
     }
-    .main_body{
-        margin-top: 4%;
+    .body_content{
+        float: none;
+        margin: auto;
     }
 
 }
-@media only screen and (min-device-width: 753px) and (max-device-width:800px){
-    .right_sidebar{
-        display: block;
-    }
     
 }
 @media only screen and (min-device-width: 581px) and (max-device-width:753px){
