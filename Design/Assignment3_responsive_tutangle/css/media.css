@@ -10,7 +10,12 @@
         width: 100%;
         font-size: 1rem;
     }
-   
+    .logo_container{
+        width: 100%;
+    }
+    .search_bar{
+       float: right;
+    }
     .mob_view_800{
         float: left;
         width: 100%;
@@ -38,20 +43,12 @@
         float: none;
         margin: auto;
     }
-
-}
-.posts{
-    width: 100%;
-}
-    
-}
-@media only screen and (min-device-width: 581px) and (max-device-width:753px){
-    .body_content{
-        float: none;
-        margin: auto;
+    .posts{
+        width: 100%;
     }
 
 }
+    
 @media only screen and (max-device-width:581px) {
     .search_btn{
         display: none;
@@ -89,6 +86,14 @@
     .main_body{
         margin-top: 2%;
     }
+    .main_container{
+        width: 36rem;
+        margin: 0;
+        padding: 0;
+    }
+    header{
+        padding-bottom: 2rem;
+    }
 }
 @media only screen and (min-device-width: 1004px){
     .full_width_header{
@@ -102,13 +107,5 @@
     .full_width_footer{
         width: 100%;
         background-color: #727272;
-    }
-}
-
-@media only screen and (max-device-width:581px){
-    .main_container{
-        width: 36rem;
-        margin: 0;
-        padding: 0;
     }
 }
