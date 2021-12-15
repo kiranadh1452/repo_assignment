@@ -8,11 +8,9 @@
     }
     .search_list_text{
         width: 100%;
+        font-size: 1rem;
     }
-    .right_sidebar{
-        float: none;
-        margin: 0;
-    }
+   
     .mob_view_800{
         float: left;
         width: 100%;
@@ -42,6 +40,9 @@
     }
 
 }
+.posts{
+    width: 100%;
+}
     
 }
 @media only screen and (min-device-width: 581px) and (max-device-width:753px){
@@ -63,22 +64,22 @@
         visibility: hidden;
     }
     .menu:after{
-        content: url('../images/tdash.png');
+        content: url('../images/menu.png');
         visibility: visible;
         float: left;
         position: relative;
-        bottom: -5px;
+        bottom: -1.2rem;
         left: -6%;
     }
     .notice{
         visibility: hidden;
     }
     .notice:after{
-        content: url('../images/user-icon.png');
+        content: url('../images/user_icon.png');
         visibility: visible;
         float: right;
         position: relative;
-        bottom: 5px;
+        bottom: 1.2rem;
         right: 12%;
     }
     .sub_header{
