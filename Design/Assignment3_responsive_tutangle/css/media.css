@@ -1,4 +1,4 @@
-@media only screen and (min-device-width : 470px) and (max-device-width : 800px){
+@media only screen and (max-device-width : 800px){
     /* Styles */
 
     .left_sidebar, .right_sidebar{
@@ -10,15 +10,21 @@
     }
     .container{
         width: 100%;
+        margin: auto;
     }
     header nav{
         display: none;
     }
     .user_info{
         display: none;
+        /* content: url('../images/user_setting.png');
+        margin-right: 2%; */
     }
     .notice span{
         display: none;
+    }
+    .main_body{
+        margin-top: 4%;
     }
 
 }
@@ -26,9 +32,7 @@
     .right_sidebar{
         display: block;
     }
-    .body_content{
-        margin-left: 10px;
-    }
+    
 }
 @media only screen and (min-device-width: 581px) and (max-device-width:753px){
     .body_content{
@@ -37,9 +41,13 @@
     }
 
 }
-@media only screen and (min-device-width: 470px) and (max-device-width:581px) {
+@media only screen and (max-device-width:581px) {
     .search_btn{
         display: none;
+    }
+    .search_bar{
+        float: right;
+        margin-right: 2%;
     }
     .menu{
         visibility: hidden;
@@ -68,7 +76,7 @@
         padding: 0;
     }
     .main_body{
-        margin-top: 1%;
+        margin-top: 2%;
     }
 }
 @media only screen and (min-device-width: 1004px){
@@ -83,5 +91,13 @@
     .full_width_footer{
         width: 100%;
         background-color: #727272;
+    }
+}
+
+@media only screen and (max-device-width:581px){
+    .main_container{
+        width: 36rem;
+        margin: 0;
+        padding: 0;
     }
 }
