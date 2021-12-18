@@ -282,7 +282,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         padding: 7.2% 0;
-        padding-bottom: 2%;
+        padding-bottom: 5%;
         width: 100%;
         margin: 0;
     }
@@ -299,7 +299,8 @@
         float: left;
         margin: 0;
         width: 34%;
-        margin-left: 10%;
+        margin-left: 0%;
+        padding-bottom: 5%;
     }
     .contact-2-img-holder{
         float: right;
@@ -343,7 +344,10 @@
 
     #appointment-form *{
         margin: 3% 0;
-    }  
+    } 
+    .contact-2-heading{
+        margin: auto 0 ;
+    } 
 }
 
 @media only screen and (max-device-width : 1300px) and (min-device-width : 920px){
