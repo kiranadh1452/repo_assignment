@@ -269,6 +269,15 @@
 
 
 
+    
+    
+    
+     
+
+}
+
+@media only screen and (min-device-width : 1375px){
+
     /* contact2 section ahead */
     .contact-2{
         background: white;
@@ -305,6 +314,7 @@
         margin: 0;
         margin-right: 10%;
     }
+
     
     /* appointment form */
     .contact-form-img{
@@ -342,13 +352,7 @@
     #appointment-form *{
         margin: 3% 0;
     }  
-    .contact-2-heading{
-        margin-left: 10%;
-    }  
-
 }
-
-
 
 @media only screen and (max-device-width : 1300px) and (min-device-width : 920px){
     .hide_me{
