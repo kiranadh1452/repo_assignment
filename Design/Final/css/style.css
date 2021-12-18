@@ -21,6 +21,9 @@
     width: 1.7rem;
     height: 1.7rem;
 }
+.head_icon2{
+    display: none;
+}
 
 .logo_container{
     display: inline-block;

@@ -365,6 +365,16 @@
         visibility: hidden;
     }
 }
-@media only screen and (max-device-width: 920px){
-    
+@media only screen and (max-device-width: 400px){
+    .head_icon{
+        display: none;
+    }
+    .head_icon2{
+        display: inline-block;
+        width: 20%;
+    }
+    .logo_container{
+        padding-right: 0;
+        margin-right: 0;
+    }
 }
