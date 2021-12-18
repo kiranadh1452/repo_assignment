@@ -134,7 +134,7 @@
     }
 
     /* Testinomial section ahead */
-    .testinomials_container::before{
+    .testinomials_container:before{
         content: 'Industry';
         font-size: 2rem;
         margin: 0;
