@@ -235,6 +235,9 @@
 .pricing_plan_specific{
     margin-bottom: 10%;
 }
+.pricing_plan_specific img{
+    border-radius: 1%;
+}
 
 /*footer section ahead*/
 .footer_container{
