@@ -1,0 +1,370 @@
+@media only screen and (min-device-width : 920px){
+    .header_and_logo *{
+        background: none;
+    }
+    .header_and_logo{
+        /* position: relative; */
+        background-image: url('../images/desktop/header_bg_desktop.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 789px;
+        margin: 0;
+        margin-bottom: 20%;
+
+    }
+    .header_container{
+        margin: auto 5rem;
+        margin-right: 0;
+        color: white;
+        font-weight: bold;
+    }
+    .header_top{
+        display: inline-block;
+    }
+    .nav_bar{
+        display: inline-block;
+        margin-left: 10%;
+        padding: 0;
+    }
+    .nav_items_list{
+        display: inline-block;
+        padding: 0;
+        margin: 0 1rem;
+    }
+    .nav_items_head{
+        font-size: 130%;
+    }
+    .nav_items_list a{
+        text-decoration: none;
+        color: #ffffff;
+    }
+    .nav_items_list:hover, .nav_items_list:active{
+        text-decoration: none;
+        border-bottom: grey solid 1px;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    /* login and signup */
+    .login_signup{
+        display: inline-block;
+        margin-left: 15%;
+        padding: 0;
+    }
+    .account_link{
+        border: none;
+        border-radius: 0.4rem;
+        color: white;
+        font-size: 0.9rem;
+        padding: 0.2rem 0.4rem;
+        font-weight: bold;
+        margin-right: 2em;   
+        height: 2rem;
+        cursor: pointer;
+    }
+    .account_link:hover{
+        background-color: grey;
+    }
+    .header_options{
+        display: none;
+    }
+
+
+    /* Frame 1 - here onwards */
+    /* .body_frame_1{
+        background-image: none;
+        position: absolute;
+        top: 1rem;
+        left: 0rem;
+        width: 100%;
+
+    } This was to manage relative positioning but this made the contents of parent div irresponsive.  Parent-> "header_and_logo"*/
+    .frame1_h1{        
+        margin:3% 30%;
+        font-size: 3.2rem;
+        font-weight: bold;
+        line-height: 4rem;
+        margin-top: 13%;
+    }
+    .frame1_h4{
+        font-size: 1.9rem;
+        margin: 0 30%;
+        margin-bottom: 2%;
+    }
+    .btn_display_type{
+        display: inline-block;
+        color: white;
+        margin: 0 2%;
+    }
+    .blue_fill{
+        background-color: #23A6F0;
+    }
+
+
+
+    /* moto blocks here onward */
+    .moto_blocks{
+        display: inline-block;
+        background-color: white;
+        width: 20%;
+        margin: 0 1%;
+        padding: 1% 1%;
+        text-align: left;
+        box-shadow: rgba(0, 0, 0, 0.07) 0em 0em 0.1em 0.2em;
+    }
+    .frame1_container_top{
+        padding-top: 0;
+    }
+    .frame1_container_down{
+        text-align: center;
+        margin-top: 8%;
+    }
+    .frame1_dwn_block3{
+        background-color: #23A6F0;
+        color: white;
+    }
+
+
+    /* Features ahead*/
+    .feature_specific{
+        display: inline-block;
+        width: 20%;
+        margin: 0 1%;
+        padding: 1% 1%;
+    }
+
+    /* Testinomial section ahead */
+    .testinomials_container::before{
+        content: 'Industry';
+        font-size: 2rem;
+        margin: 0;
+        padding: 0;
+        margin-top: 5%;
+    }
+    .testinomials_upper_body{
+        text-align: center;
+        margin: 1.4% auto;
+    }
+    .testinomials_container{
+        padding: 0 10%;
+        padding-bottom: 10%;
+    }
+    .testinomial_specific{
+        display: inline-block;
+        margin: 0 2%;
+        padding: 1% 0%;
+        width: 25%;
+    }
+    .review_text{
+        padding: 0;
+    }
+
+    
+    /* Ad-baner and Newsletter here onwards */
+    .ad_specific{
+        display: inline-block;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+    .ad_baner{
+        margin: 0 14%;
+        width: 72%;
+    }
+    .newsletter_container{
+        margin: 0 14%;
+        /* padding: 0; */
+        width: 72%;
+    }
+    .letter_title{
+        float: left;
+        margin: 0;
+        margin-left: 4% ;
+        text-align: left;
+        width: 30%;
+        line-height: 3rem;
+    }
+    .form_container{
+        float: right;
+        padding: 0;
+        margin: 0;
+        margin-top: 2%;
+        width: 60%;
+    }
+    .email_id{
+        width: 80%;
+    }
+
+
+
+    /* Pricing section ahead*/
+    .pricing_text{
+        width: 50%;
+        margin: 0 25%;
+    }
+    .pricing_title{
+        font-size: 2.7rem;
+        margin: 2% 0;
+    }
+    .pricing_plans{
+        padding: 5% 0;
+    }
+    .pricing_plan_specific{
+        display: inline-block;
+        margin: 1% 0%;
+    }
+
+    /* footer and other */
+    .contact_btn{
+        float: right;
+        margin: 1% 0;
+    }
+    .footer_title, .footer_all_text, .developer, .foot_icons{
+        display: inline-block;
+    }
+    .footer_title_second{
+        padding: 0;
+    }
+    .contact_us{
+        background-color: #fafafa;
+    }
+    .footer_container{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .contact_us{
+        margin: 2% 0;
+        padding: 0 13.5%;
+        width: 73%;
+    }
+    .footer_in-block{
+        display: inline-block;
+        margin: 0%;
+        padding: 0;
+        width: 14.5%;
+        line-height: 2rem;
+        vertical-align: text-top;
+    }
+    .footer_title_second:nth-last-child(1){
+        padding: 0% 0;
+        margin: 0;
+        width: 50%;
+    }
+    .developer{
+        margin: 0;
+        margin-left: 13%;
+        float: left;
+        width: 40%;
+        line-height: 170%;
+    }    
+    .foot_icons{
+        float: right;
+        margin: 0;
+        padding: 0;
+        width: 24%;
+    }
+    .footer_bottom{
+        padding: 2% 0;
+    }
+
+
+
+    /* contact2 section ahead */
+    .contact-2{
+        background: white;
+        padding: 0;
+        margin: 0;
+
+    }
+    .contact-2-upper-part{
+        background-image: url('../images/contact-2/background.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 7.2% 0;
+        padding-bottom: 2%;
+        width: 100%;
+        margin: 0;
+    }
+    .contact-2-heading, .contact-2-text{
+        margin: 0;
+    }
+    .contact-2-heading{
+        font-size: 220%;
+    }
+    .contact-2-text{
+        font-size: 1.2rem;
+    }
+    .contact-head{
+        float: left;
+        margin: 0;
+        width: 34%;
+        margin-left: 10%;
+    }
+    .contact-2-img-holder{
+        float: right;
+        margin: 0;
+        margin-right: 10%;
+    }
+    
+    /* appointment form */
+    .contact-form-img{
+        display: none;
+    }
+    .contact-form:before{
+        content: url('../images/contact-2/cover.2.png');
+        float: left;
+        visibility: visible;
+        min-height: 100%;
+        padding: 0;
+    }
+    .contact-form{
+        text-align: center;
+        padding: 0;
+        margin: 0 10%;
+        width: 80%;
+        margin-top: -10%;
+        background-color: #fafafa;
+    }
+    .appointment-form-container{
+        float: right;
+        width: 60%;
+        margin: 0;
+    }
+    #appointment-form{
+        padding: 0;
+        margin: 0;
+        margin-left: 10%;
+    }
+    #appointment-form input{
+        line-height: 2rem;
+    }
+
+    #appointment-form *{
+        margin: 3% 0;
+    }  
+    .contact-2-heading{
+        margin-left: 10%;
+    }  
+
+}
+
+
+
+@media only screen and (max-device-width : 1300px) and (min-device-width : 920px){
+    .hide_me{
+        visibility: visible;
+    }
+}
+@media only screen and (min-device-width : 1301px){
+    .hide_me{
+        visibility: hidden;
+    }
+}
+@media only screen and (max-device-width : 1300px){
+    .login_signup{
+        visibility: hidden;
+    }
+}
+@media only screen and (max-device-width: 920px){
+    
+}

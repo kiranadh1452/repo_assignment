@@ -1,0 +1,57 @@
+.border{
+    border: 1px solid black;
+}
+.header_continer{
+    max-width: 100%;
+    background-color: #F6F6F6;
+}
+.logo_container, .header_options{
+    width: 45%;
+    margin: 0.3% 0.2%;
+    padding: 1.5rem 0;
+}
+.header_options{
+    text-align: right;
+}
+.clearfix:after{
+    content: '';
+    clear: both;
+    display: table;
+}
+.nav_bar{
+    padding: 1rem 0rem 3rem 0rem;
+    text-align: center;
+}
+.float_left{
+    float: left;
+}
+.float_right{
+    float: right;
+}
+.text_align_center{
+    text-align: center;
+}
+.text_align_left{
+    text-align: left;
+}
+.frame2{
+    margin: 10% 0;
+}
+.frame3{
+    background-color: #FAFAFA;
+}
+.frame4{
+    background-color: #FAFAFA;
+    margin: 0;
+    padding: 5% 0;
+}
+.frame5{
+    background-color: #FAFAFA;
+    padding: 5% 0;
+}
+.frame7{
+    margin: 0% 0;
+    padding: 5% 0;
+    padding-bottom: 0;
+    position: static;
+}
