@@ -7,6 +7,9 @@ let inc = 1;
 let boxWidth =  600;
 let boxHeight = 600;
 
+let heliWidth = 120;
+let heliHeight = 87
+
 //Formatting the main element
 myElement.style.width = boxWidth + "px";
 myElement.style.height = boxHeight + "px";
@@ -16,8 +19,8 @@ myElement.style.background = "url('assets/images/bgImage.jpg')";
 
 
 const helic = document.createElement("div");
-helic.style.width = "120px";
-helic.style.height = "87px";
+helic.style.width = heliWidth + "px";
+helic.style.height = heliHeight + "px";
 helic.style.position = "absolute";
 helic.style.top = y + "px";
 helic.style.left = x + "px";
@@ -27,6 +30,7 @@ myElement.appendChild(helic);
 
 setInterval(() => {
   if(y>= boxHeight-87){
+    // document.removeEventListener("keydown",handleKey);
     inc = -1;
   }
   if(y<=0){
@@ -38,12 +42,16 @@ setInterval(() => {
 
 },10);
 
-const handleClick = (event) => {
-  if(y>=40){
-    y = y - 40;
+const handleKey = (e) => {
+  console.log(e.code);
+  
+  if (e.code === 'Space'){  //Use space to move the heli upwards.
+    if(y>=40){
+      y = y - 20;
+    }
+    else y = 0;
+    helic.style.top = y + "px";
   }
-  else y = 0;
-  helic.style.top = y + "px";
 };
 
-helic.addEventListener("click", handleClick);
+document.addEventListener("keydown", handleKey);
