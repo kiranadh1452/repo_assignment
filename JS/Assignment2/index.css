@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#images ,#images1 {
+  height: 500px;
+  position: relative;
+  z-index: 1;
+}
+
+#wrapper , #wrapper1{
+  position: relative;
+  margin: 20px;
+  width: 500px;
+  overflow: hidden;
+}
+
+img {
+  position: absolute;
+  z-index: 1;
+  width: 500px;
+  height: 500px;
+  border: 1px solid #ccc;
+  top: 0px;
+}
+
+.control-button{
+  position: absolute;
+  top: 230px;
+  left: 0px;
+  z-index: 3;
+  outline: none;
+  border: none;
+  background:none;
+  font-size: 50px;
+  font-weight: bolder;
+  color: white;  
+}
+.control-button:hover{
+  cursor: pointer;
+}
+.btn-right{
+  position: absolute;
+  left: 483px;
+}
+
+.dots-container{
+  position: absolute;
+  z-index: 4;
+  top: 470px;
+  left: 190px;
+  margin: 0;
+}
+.dot-specific{
+  z-index: 4;
+  height: 18px;
+  width: 18px;
+  background-color: rgba(10, 9, 9, 0.5);
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px #000000;
+  float: left;
+  margin: 3px;
+}
+.dot-current{
+  background: red;
+}
