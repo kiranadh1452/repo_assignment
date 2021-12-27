@@ -3,7 +3,7 @@ const ballContainer = document.getElementById("ball-container");
 ballContainer.style.width = `${boundaryWidth}px`
 ballContainer.style.height = `${boundaryHeight}px`
 
-const ballCount = 10;
+const ballCount = 300;
 const ballArray = [];
 
 let toogle = false;

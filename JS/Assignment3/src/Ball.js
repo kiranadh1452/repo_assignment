@@ -59,16 +59,16 @@ function Ball(radius, ballContainer, bgColor){
         let netRad = ball.radius + this.radius;
         if(dist <= netRad){
           ball.dx = ball.dx * -1;
-          ball.x = ball.x + (((netRad-dist)/netRad)*this.radius*ball.dx);
+          ball.x = ball.x + ((((netRad-dist)/netRad)*this.radius + 1)*ball.dx);
 
           this.dx = this.dx *-1;
-          this.x = this.x + (((netRad-dist)/netRad)*ball.radius*this.dx);
+          this.x = this.x + ((((netRad-dist)/netRad)*ball.radius + 1)*this.dx);
 
           ball.dy = ball.dy * -1;
-          ball.y = ball.y + (((netRad-dist)/netRad)*this.radius*ball.dy);
+          ball.y = ball.y + ((((netRad-dist)/netRad)*this.radius + 1)*ball.dy);
           
           this.dy = this.dy *-1;
-          this.y = this.y + (((netRad-dist)/netRad)*ball.radius*this.dy);
+          this.y = this.y + ((((netRad-dist)/netRad)*ball.radius + 1)*this.dy);
         }
       }
     });
