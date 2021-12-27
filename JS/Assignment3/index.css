@@ -1,0 +1,22 @@
+body {
+  font-family: sans-serif;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #292;
+}
+
+#ball-container {
+  border: 1px solid black;
+  margin: 0;
+  padding: 0;
+  width: 500px;
+  height: 500px;
+  position: relative;
+}
+
+.ball {
+  border-radius: 50%;
+}
