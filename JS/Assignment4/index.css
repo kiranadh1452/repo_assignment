@@ -1,0 +1,24 @@
+body {
+  font-family: sans-serif;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #292;
+}
+
+#ant-container {
+  border: 1px solid black;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.ant {
+  /* border-radius: 50%; */
+  background: url("assets/images/ant1.png");
+}
+#head-container{
+  padding-left: 500px;
+}
