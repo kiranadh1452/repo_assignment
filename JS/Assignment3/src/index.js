@@ -7,14 +7,24 @@ ballContainer.style.height = `${boundaryHeight}px`
 
 const ballCount = 1000;
 const ballArray = [];
+let toogle = false;
 
 document.getElementById("btn").onclick = function () {
-  ballContainer.innerHTML = "";
-  for (let i = 0; i < ballCount; i++){
-    ballRadius = getRandomInt(LOW_RADIUS, HIGH_RADIUS);
-    const ball = new Ball(ballRadius, ballContainer, getColor());
-    ballArray.push(ball);
-    ball.move();
-    ball.render();
+  
+  toogle = !toogle;
+  if(!toogle){
+    ballContainer.innerHTML = "";
+    while(ballArray.length >0 ){
+      ballArray.pop();
+    }
+  }
+  else{
+    for (let i = 0; i < ballCount; i++){
+      ballRadius = getRandomInt(LOW_RADIUS, HIGH_RADIUS);
+      const ball = new Ball(ballRadius, ballContainer, getColor());
+      ballArray.push(ball);
+      ball.move();
+      ball.render();
+    }
   }
 };

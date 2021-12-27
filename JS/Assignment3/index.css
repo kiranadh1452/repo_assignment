@@ -20,3 +20,6 @@ body {
 .ball {
   border-radius: 50%;
 }
+#head-container{
+  padding-left: 500px;
+}
