@@ -1,14 +1,3 @@
-const HIGH_RADIUS = 10;
-const LOW_RADIUS = 2;
-
-const LOW_SPEED = 5;
-const HIGH_SPEED = 15;
-
-const FPS = 60;
-
-const boundaryWidth = 1500;
-const boundaryHeight = 750;
-
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);

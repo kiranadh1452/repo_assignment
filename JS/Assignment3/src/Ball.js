@@ -26,21 +26,18 @@ function Ball(radius, ballContainer, bgColor){
     ballContainer.appendChild(this.ball);
   };
 
-  this.move = function () {
-    setInterval(() => {
-      this.x += this.speed * this.dx;      
-      this.y += this.speed * this.dy;
-      
-      this.checkWallCollision();
-      this.checkBallCollision();
+  this.move = function (){
+    window.requestAnimationFrame(this.move.bind(this));
 
-      this.ball.style.top = this.y + "px";
-      this.ball.style.left = this.x + "px";
-    }, 1000 / FPS);
-    function beginAnimate(){
+    this.x += this.speed * this.dx;      
+    this.y += this.speed * this.dy;
+    
+    this.checkWallCollision();
+    this.checkBallCollision();
 
-    }
-  };
+    this.ball.style.top = this.y + "px";
+    this.ball.style.left = this.x + "px";
+  }
 
   this.checkWallCollision = function (){
 
@@ -61,18 +58,17 @@ function Ball(radius, ballContainer, bgColor){
         let dist = getDistance(ball.x+ball.radius , ball.y+ball.radius  , this.x+this.radius, this.y+this.radius);
         let netRad = ball.radius + this.radius;
         if(dist <= netRad){
-          // console.log('they met');
           ball.dx = ball.dx * -1;
-          ball.x = ball.x + (netRad-dist)*ball.dx;
+          ball.x = ball.x + (((netRad-dist)/netRad)*this.radius*ball.dx);
 
           this.dx = this.dx *-1;
-          this.x = this.x + (netRad - dist)*this.dx;
+          this.x = this.x + (((netRad-dist)/netRad)*ball.radius*this.dx);
 
           ball.dy = ball.dy * -1;
-          ball.y = ball.y + (netRad-dist)*ball.dy;
-          // // ball.y -= ball.radius;
+          ball.y = ball.y + (((netRad-dist)/netRad)*this.radius*ball.dy);
+          
           this.dy = this.dy *-1;
-          this.y = this.y + (netRad - dist)*this.dy;
+          this.y = this.y + (((netRad-dist)/netRad)*ball.radius*this.dy);
         }
       }
     });
