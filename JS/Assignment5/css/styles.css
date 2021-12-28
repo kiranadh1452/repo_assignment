@@ -6,7 +6,6 @@
 .main-container{
   position: relative;
   width: 100%;
-  height: 800px;
   margin-top: 2%;
 }
 .car, .enemyCar{
@@ -22,18 +21,16 @@
   background-image: url('../assets/images/raceCar.png');
 }
 .roadLaneLeft , .roadLaneRight{
-  width: 15px;
-  height: 100px;
+  width: 1.6129%;
+  height: 12.5%;
   position: absolute;
   background: rgb(214, 205, 205);
-  margin-left: 300px;
+  margin-left: 32.258%;
 }
 .roadLaneRight{
-  margin-left: 615px;
+  margin-left: 66.129%;
 }
 .game-wrapper{
-  width: 930px;
-  height: 800px;
   background: #36393a;
   margin: auto;
   position: relative;

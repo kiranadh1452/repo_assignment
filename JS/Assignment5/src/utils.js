@@ -26,3 +26,7 @@ function getColor(){
 function _(selectorValue){
   return document.querySelector(selectorValue);
 }
+
+function __(selectorValue){
+  return document.querySelectorAll(selectorValue);
+}

@@ -1,4 +1,4 @@
-const carLeftPos = [100,400,700];
+const carLeftPos = [10.75268,43.0107,75.2688];
 let posCar = getRandomInt(0,3);
 let highScore;
 
@@ -33,7 +33,7 @@ startBtn.addEventListener('click', () => {
     let carElement = document.createElement('div');
     carElement.setAttribute('class', 'car');
     gameContainer.appendChild(carElement);
-    carElement.style.left = carLeftPos[posCar] + "px";
+    carElement.style.left = carLeftPos[posCar] + "%";
 
     for(let count=0; count<3; count++){
         let enemyCar = document.createElement('div');
@@ -41,7 +41,7 @@ startBtn.addEventListener('click', () => {
         enemyCar.y = ((count+1) * 500) * - 1;
         enemyCar.style.top = enemyCar.y + "px";
         enemyCar.style.color = getColor();
-        enemyCar.style.left = carLeftPos[getRandomInt(0,3)] + "px";
+        enemyCar.style.left = carLeftPos[getRandomInt(0,3)] + "%";
         gameContainer.appendChild(enemyCar);
 
     }
@@ -50,13 +50,14 @@ startBtn.addEventListener('click', () => {
 
 function addRoadLane(laneSide){
 
-    for(let i=0; i<5; i++){
+    for(let i=0; i< 5; i++){
         let roadLineElement = document.createElement('div');
         roadLineElement.setAttribute('class', laneSide);
-        roadLineElement.y = (i*150);
+        roadLineElement.y = (i* carLaneHeight);
         roadLineElement.style.top = roadLineElement.y + "px";
         gameContainer.appendChild(roadLineElement);
     }
+
 }
 
 
@@ -81,8 +82,8 @@ function onGameOver() {
 function moveLane(lineClass){
     let roadLines = document.querySelectorAll(lineClass);
     roadLines.forEach((item)=> {
-        if(item.y >= 700){
-            item.y -= 750;
+        if(item.y >= gameContainerHeight){
+            item.y -= (gameContainerHeight);
         }
         item.y += gameSpeed;
         item.style.top = item.y + "px";
@@ -101,7 +102,7 @@ function moveEnemyCars(carElement){
         if(item.y >= 700){
             item.y = -850;
             gameScore++;
-            item.style.left = carLeftPos[getRandomInt(0,3)] + "px";
+            item.style.left = carLeftPos[getRandomInt(0,3)] + "%";
         }
         item.y += gameSpeed;
         item.style.top = item.y + "px";
@@ -118,7 +119,7 @@ function gamePlay() {
         moveLane('.roadLaneRight');
         moveEnemyCars(carElement);
         
-        carElement.style.left = carLeftPos[posCar] + "px";
+        carElement.style.left = carLeftPos[posCar] + "%";
 
         window.requestAnimationFrame(gamePlay);
 
