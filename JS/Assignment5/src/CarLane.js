@@ -1,7 +1,3 @@
-
-let posCar = getRandomInt(0,3);
-let highScore;
-
 //checks if there is a localstorage for highscore
 function chkHighScore(){
     try{
@@ -18,13 +14,11 @@ function chkHighScore(){
 //on clicking game start
 startBtn.addEventListener('click', () => {
     chkHighScore();
-    gameContainer.classList.remove('hide');
-    startBtn.classList.add('hide');
-    gameContainer.innerHTML = "";
-
-    gameSpeed = 8;
     gameStart = true;
-    gameScore = 0;
+    gameContainer.innerHTML = "";
+    startBtn.classList.add('hide');
+    gameContainer.classList.remove('hide');
+    
 
     window.requestAnimationFrame(gamePlay);
 
@@ -32,7 +26,7 @@ startBtn.addEventListener('click', () => {
     addRoadLane('roadLaneRight');
 
     createCar();
-    createEnemyCar();
+    createEnemyCar(3);
 });
 
 
@@ -44,13 +38,52 @@ function createCar(){
     carElement.style.left = carLeftPos[posCar] + "%";
 }
 
+//adding bullet features
+function createBullet(){
+    bulletCount--; 
+    let bullet = document.createElement('div');
+    bullet.y = 500;
+    bullet.setAttribute('class','bullet');
+    bullet.style.marginLeft = `${carLeftPos[posCar]+5}%`;
+    bullet.style.top = bullet.y+"px";
+    gameContainer.appendChild(bullet);
+    moveBullet();
+}
+
+//move the bullet
+function moveBullet(){
+    let bullet = _('.bullet');
+    if(bullet){
+
+        bullet.y = bullet.y - gameSpeed;
+        bullet.style.top = `${bullet.y}px`;
+
+        let enemyCars = document.querySelectorAll('.enemyCar');
+        enemyCars.forEach((item)=> { 
+            if(onCollision(bullet, item)){
+                gameContainer.removeChild(item);
+                deleteBullet();
+                createEnemyCar(1);
+                gameScore++;
+            }
+        });
+        if(shotStatus && bullet.y < 10){
+                   deleteBullet();
+        }
+        function deleteBullet(){
+            gameContainer.removeChild(bullet);
+            bullet.remove();
+            shotStatus = false; 
+        }
+    }
+}
 
 //creates enemy cars  
-function createEnemyCar(){
-    for(let count=0; count<3; count++){
+function createEnemyCar(numberOfCars){
+    for(let count = 0; count < numberOfCars; count++){
         let enemyCar = document.createElement('div');
         enemyCar.setAttribute('class', 'enemyCar');
-        enemyCar.y = ((count+1) * 500) * - 1;
+        enemyCar.y = ((count + 1) * 500) * - 1;
         enemyCar.style.top = enemyCar.y + "px";
         enemyCar.style.color = getColor();
         enemyCar.style.left = carLeftPos[getRandomInt(0,3)] + "%";
@@ -73,6 +106,9 @@ function moveEnemyCars(carElement){
         if(item.y >= 700){
             item.y = -850;
             gameScore++;
+            if(gameScore % 5 == 0){ //one bullet for every 5 vehicles passed
+                bulletCount += 1;
+            }
             item.style.left = carLeftPos[getRandomInt(0,3)] + "%";
         }
         item.y += gameSpeed;
@@ -101,7 +137,6 @@ function moveLane(lineClass){
         if(item.y >= gameContainerHeight){
             item.y -= (gameContainerHeight*1.3);
         }
-
         item.y += gameSpeed;
         item.style.top = item.y + "px";
     });
@@ -124,11 +159,16 @@ function onCollision(a,b){
 
 // game ending scenario handling
 function onGameOver() {
+    document.removeEventListener("keydown",handleKey);
     gameStart = false;
     startBtn.classList.remove('hide');
     localStorage.setItem('highestScore', highScore);
     startBtn.innerText = `Game Over\n Your final score is: ${gameScore}
-                             Click to restart the game.\n\nCurrent High Score : ${highScore}`;
+                             Click to restart the game.\n\nCurrent High Score : ${highScore}
+                             
+                             a. Use Arroy keys to move.
+                             b. Increase one bullet for
+                                every 5 cars overtaked.`;
 }
 
 
@@ -138,25 +178,40 @@ function gamePlay() {
     let road = gameContainer.getBoundingClientRect();
 
     if(gameStart){
+        bulletCountHolder.innerHTML = `Bullets: ${bulletCount}`;
+        
+        document.addEventListener('keydown', handleKey);
         moveLane('.roadLaneLeft');
         moveLane('.roadLaneRight');
         moveEnemyCars(carElement);
         
+        if(shotStatus){
+            moveBullet();
+        }
+
         carElement.style.left = carLeftPos[posCar] + "%";
         window.requestAnimationFrame(gamePlay);
-        gameSpeed += (Math.random()*SPEED_FACTOR);
-        if(gameScore > highScore) highScore = gameScore;
+        gameSpeed += (SPEED_FACTOR);
 
-        score.innerText = `Highest Score : ${highScore}\nCurrent Score : ${gameScore}`;          
+        
+        if(gameScore > highScore){
+            highScore = gameScore;
+        }
+        score.innerText = `Highest Score : ${highScore}\nCurrent Score : ${gameScore}`;  
+        
     }
 }
 
 
 //controlling the user car with left and right arrow keys
-const handleKey = (e) => {
+function handleKey(e) {
     let code = e.code;
-    if(code == "ArrowLeft" && posCar > 0) posCar-- ;
-    if(code == "ArrowRight" && posCar <2) posCar++ ;
-};
-
-document.addEventListener('keydown', handleKey);
+    if (code == "ArrowLeft" && posCar > 0)
+        posCar--;
+    if (code == "ArrowRight" && posCar < 2)
+        posCar++;
+    if ((code == "Space") && (gameStart) && (shotStatus == false) && (bulletCount > 0)) {
+        shotStatus = true;
+        createBullet();
+    }
+}
