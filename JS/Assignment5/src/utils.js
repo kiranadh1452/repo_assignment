@@ -1,8 +1,7 @@
 /*
-  @param
-  min = minimum range (inclusive)
-  max = maximum range (exclusive)
-  returns an integer between min and max
+  @param {number} min => minimum range (inclusive)
+  @param {number} max => maximum range (exclusive)
+  returns an {integer} between min and max
 */
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -19,9 +18,8 @@ function getColor(){
 }
 
 /*
-  @param
-  selectorValue : selector of the element/s you want to get hold on.
-  return the element/s with coressponsing selector value.
+  @param {string}: selector of the element/s you want to get hold on.
+  return the {List} of elements with coressponsing selector value.
 */
 function _(selectorValue){
   return document.querySelector(selectorValue);

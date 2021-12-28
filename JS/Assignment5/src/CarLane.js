@@ -1,8 +1,8 @@
-const carLeftPos = [10.75268,43.0107,75.2688];
+
 let posCar = getRandomInt(0,3);
 let highScore;
 
-
+//checks if there is a localstorage for highscore
 function chkHighScore(){
     try{
         highScore = localStorage.getItem('highestScore');
@@ -10,11 +10,13 @@ function chkHighScore(){
     catch(err){
         console.log(err);
         localStorage.setItem('highestScore', 0);
-        highScore = 0;
     }
-}
+    finally{
+        if(highScore == null) highScore = 0;
+    }
+} 
 
-
+//on clicking game start
 startBtn.addEventListener('click', () => {
     chkHighScore();
     gameContainer.classList.remove('hide');
@@ -30,12 +32,26 @@ startBtn.addEventListener('click', () => {
     addRoadLane('roadLaneLeft');
     addRoadLane('roadLaneRight');
 
+    createCar();
+    createEnemyCar();
+
+});
+
+
+//creates user's car
+function createCar(){
     let carElement = document.createElement('div');
     carElement.setAttribute('class', 'car');
     gameContainer.appendChild(carElement);
     carElement.style.left = carLeftPos[posCar] + "%";
+}
+
+
+//creates enemy cars  
+function createEnemyCar(){
 
     for(let count=0; count<3; count++){
+
         let enemyCar = document.createElement('div');
         enemyCar.setAttribute('class', 'enemyCar');
         enemyCar.y = ((count+1) * 500) * - 1;
@@ -45,52 +61,12 @@ startBtn.addEventListener('click', () => {
         gameContainer.appendChild(enemyCar);
 
     }
-});
-
-
-function addRoadLane(laneSide){
-
-    for(let i=0; i< 5; i++){
-        let roadLineElement = document.createElement('div');
-        roadLineElement.setAttribute('class', laneSide);
-        roadLineElement.y = (i* carLaneHeight);
-        roadLineElement.style.top = roadLineElement.y + "px";
-        gameContainer.appendChild(roadLineElement);
-    }
-
 }
 
 
-function onCollision(a,b){
-    aRect = a.getBoundingClientRect();
-    bRect = b.getBoundingClientRect();
-
-    return !((aRect.top >  bRect.bottom) || (aRect.bottom <  bRect.top) ||
-        (aRect.right <  bRect.left) || (aRect.left >  bRect.right)); 
-}
-
-
-function onGameOver() {
-    gameStart = false;
-    startBtn.classList.remove('hide');
-    localStorage.setItem('highestScore', highScore);
-    startBtn.innerText = `Game Over\n Your final score is: ${gameScore}
-                             Click to restart the game.\n\nCurrent High Score : ${highScore}`;
-}
-
-
-function moveLane(lineClass){
-    let roadLines = document.querySelectorAll(lineClass);
-    roadLines.forEach((item)=> {
-        if(item.y >= gameContainerHeight){
-            item.y -= (gameContainerHeight);
-        }
-        item.y += gameSpeed;
-        item.style.top = item.y + "px";
-    });
-}
-
-
+/*
+    @param user's-car-node {carElement}
+*/
 function moveEnemyCars(carElement){
     let enemyCars = document.querySelectorAll('.enemyCar');
     enemyCars.forEach((item)=> {
@@ -110,6 +86,61 @@ function moveEnemyCars(carElement){
 } 
 
 
+//adds road stripes into the screen
+function addRoadLane(laneSide){
+
+    for(let i=0; i< 7; i++){
+        let roadLineElement = document.createElement('div');
+        roadLineElement.setAttribute('class', laneSide);
+        roadLineElement.y = (i* carLaneHeight);
+        roadLineElement.style.top = roadLineElement.y + "px";
+        gameContainer.appendChild(roadLineElement);
+    }
+
+}
+
+
+//moves the stripes with gamaspeed
+function moveLane(lineClass){
+
+    let roadLines = document.querySelectorAll(lineClass);
+    roadLines.forEach((item)=> {
+
+        if(item.y >= gameContainerHeight){
+            item.y -= (gameContainerHeight*1.3);
+        }
+
+        item.y += gameSpeed;
+        item.style.top = item.y + "px";
+    });
+}
+
+
+/*
+    @param ObjectA {a}
+    @param ObjectB {b}
+    return {true} if a and b collide
+*/
+function onCollision(a,b){
+    aRect = a.getBoundingClientRect();
+    bRect = b.getBoundingClientRect();
+
+    return !((aRect.top >  bRect.bottom) || (aRect.bottom <  bRect.top) ||
+        (aRect.right <  bRect.left) || (aRect.left >  bRect.right)); 
+}
+
+
+// game ending scenario handling
+function onGameOver() {
+    gameStart = false;
+    startBtn.classList.remove('hide');
+    localStorage.setItem('highestScore', highScore);
+    startBtn.innerText = `Game Over\n Your final score is: ${gameScore}
+                             Click to restart the game.\n\nCurrent High Score : ${highScore}`;
+}
+
+
+// game started by user
 function gamePlay() {
     const carElement = _('.car');
     let road = gameContainer.getBoundingClientRect();
@@ -132,6 +163,7 @@ function gamePlay() {
 }
 
 
+//controlling the user car with left and right arrow keys
 const handleKey = (e) => {
     let code = e.code;
     if(code == "ArrowLeft" && posCar > 0) posCar-- ;

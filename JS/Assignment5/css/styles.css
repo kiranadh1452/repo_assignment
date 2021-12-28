@@ -35,6 +35,8 @@
   margin: auto;
   position: relative;
   overflow: hidden;
+  border-right: 7px dashed rgb(212, 224, 39);
+  border-left: 7px dashed rgb(212, 224, 39);
 }
 .score-container{
   position: absolute;
