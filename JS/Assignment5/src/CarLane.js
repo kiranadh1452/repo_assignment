@@ -47,7 +47,6 @@ function createCar(){
 
 //creates enemy cars  
 function createEnemyCar(){
-
     for(let count=0; count<3; count++){
         let enemyCar = document.createElement('div');
         enemyCar.setAttribute('class', 'enemyCar');
@@ -70,7 +69,7 @@ function moveEnemyCars(carElement){
         if(onCollision(carElement, item)){
             onGameOver();
         }
-        
+
         if(item.y >= 700){
             item.y = -850;
             gameScore++;
@@ -84,7 +83,6 @@ function moveEnemyCars(carElement){
 
 //adds road stripes into the screen
 function addRoadLane(laneSide){
-
     for(let i=0; i< 7; i++){
         let roadLineElement = document.createElement('div');
         roadLineElement.setAttribute('class', laneSide);
@@ -92,16 +90,14 @@ function addRoadLane(laneSide){
         roadLineElement.style.top = roadLineElement.y + "px";
         gameContainer.appendChild(roadLineElement);
     }
-
 }
 
 
 //moves the stripes with gamaspeed
 function moveLane(lineClass){
-
     let roadLines = document.querySelectorAll(lineClass);
-    roadLines.forEach((item)=> {
 
+    roadLines.forEach((item)=> {
         if(item.y >= gameContainerHeight){
             item.y -= (gameContainerHeight*1.3);
         }
@@ -147,11 +143,8 @@ function gamePlay() {
         moveEnemyCars(carElement);
         
         carElement.style.left = carLeftPos[posCar] + "%";
-
         window.requestAnimationFrame(gamePlay);
-
         gameSpeed += (Math.random()*SPEED_FACTOR);
-
         if(gameScore > highScore) highScore = gameScore;
 
         score.innerText = `Highest Score : ${highScore}\nCurrent Score : ${gameScore}`;          
