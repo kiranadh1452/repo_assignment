@@ -8,7 +8,6 @@ function chkHighScore(){
         highScore = localStorage.getItem('highestScore');
     }
     catch(err){
-        console.log(err);
         localStorage.setItem('highestScore', 0);
     }
     finally{
@@ -34,7 +33,6 @@ startBtn.addEventListener('click', () => {
 
     createCar();
     createEnemyCar();
-
 });
 
 
@@ -51,7 +49,6 @@ function createCar(){
 function createEnemyCar(){
 
     for(let count=0; count<3; count++){
-
         let enemyCar = document.createElement('div');
         enemyCar.setAttribute('class', 'enemyCar');
         enemyCar.y = ((count+1) * 500) * - 1;
@@ -59,7 +56,6 @@ function createEnemyCar(){
         enemyCar.style.color = getColor();
         enemyCar.style.left = carLeftPos[getRandomInt(0,3)] + "%";
         gameContainer.appendChild(enemyCar);
-
     }
 }
 
@@ -69,12 +65,12 @@ function createEnemyCar(){
 */
 function moveEnemyCars(carElement){
     let enemyCars = document.querySelectorAll('.enemyCar');
-    enemyCars.forEach((item)=> {
-        
+    enemyCars.forEach((item)=> {        
 
         if(onCollision(carElement, item)){
             onGameOver();
         }
+        
         if(item.y >= 700){
             item.y = -850;
             gameScore++;
