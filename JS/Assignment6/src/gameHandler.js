@@ -18,11 +18,12 @@ function gamePlay() {
 }
 //when game has ended
 function gameOver() {
-  document.removeEventListener("keydown", handleKey);
+  time = 0;
+  birdDeath();
   gameStart = false;
   birdVelocity = INIT_VELOCITY;
-  time = 0;
   startBtn.classList.remove('hide');
+  document.removeEventListener("keydown", handleKey);
   localStorage.setItem('highestScore', highScoreFlappy);
   startBtn.innerHTML = `<p>Your Score : ${score} </p><p>Restart</p> <img src="assets/images/startButton.png" alt="play">`;
 }

@@ -1,4 +1,4 @@
-const birdImage = ["url('../assets/images/bird1.png')", "url('../assets/images/bird2.png')", "url('../assets/images/bird3.png')"];
+const birdRotate = [];
 let indexBird = 0;
 
 //creates the flappy bird
@@ -25,16 +25,41 @@ function moveBird(){
   birdElement.posY += birdVelocity;
   birdElement.style.top = `${birdElement.posY}px`;
 
+  if(birdVelocity > 0){
+    birdElement.style.transform = `rotate(${birdVelocity*2.5}deg)`;
+  }
+
+  else{
+    birdElement.style.transform = `rotate(${birdVelocity*5}deg)`;
+  }
+
   if(checkWallCollision(birdElement)) gameOver();
 
   // else{
   //   setInterval(() => {
   //     let urlValue = birdImage[indexBird];
   //     birdElement.style.backgroundImage = `${urlValue}`;
-  //     console.log(urlValue);
   //     indexBird = (indexBird+1) % birdImage.length;
   //   }, 1000);
   // }
 
 }
 
+//function that animates the death of bird
+function birdDeath(){
+  const bird = _('.bird');
+  bird.style.transform = "rotate(90deg)";
+
+  let deathFrame = window.requestAnimationFrame(birdDeath);
+
+  if(bird.posY >= gameContainerHeight-birdHeight){
+    cancelAnimationFrame(deathFrame);
+    return;
+  }
+
+  bird.posY += 20;
+  bird.posY = Math.min(bird.posY, gameContainerHeight-birdHeight);
+  bird.style.top = `${bird.posY}px`;
+
+  
+}
