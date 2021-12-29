@@ -168,7 +168,7 @@ function onGameOver() {
                              
                              a. Use Arroy keys to move.
                              b. Increase one bullet for
-                                every 5 cars overtaked.`;
+                                every 5 cars overtaken.`;
 }
 
 

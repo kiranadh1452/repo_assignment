@@ -7,6 +7,7 @@ table, td, th {
 table {
     border-collapse: collapse;
     background-color: rgba(243, 239, 239, 0.808);
+    margin-bottom: 5%;
     
 }
 #table_container{ /* This is the table formatting */
@@ -51,8 +52,8 @@ body{
     color: #ffffff;			
     float: left;
     border: 0px solid black;
-    height: 100%;
-    width: 25%;			
+    height: 100vh;
+    width: 25vw;			
 }
 /* Here, the line 32 doesn't work unless the height of html and body is also 100%. 
    This is because parent's height is to defined. */
