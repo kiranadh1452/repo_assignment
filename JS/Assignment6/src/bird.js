@@ -1,6 +1,3 @@
-const birdRotate = [];
-let indexBird = 0;
-
 //creates the flappy bird
 function createFlappyBird() {
   const birdElement = document.createElement('div');

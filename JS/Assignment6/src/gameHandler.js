@@ -8,7 +8,6 @@ function gamePlay() {
 
     moveBird();
     movePipe(birdElement);
-
     time += 0.001;
 
     if(score>highScoreFlappy){
@@ -20,6 +19,7 @@ function gamePlay() {
   }
 
 }
+
 //when game has ended
 function gameOver() {
   time = 0;
@@ -32,6 +32,7 @@ function gameOver() {
   startBtn.innerHTML = `<p>Your Score : ${score} </p><p>Restart</p> <img src="assets/images/startButton.png" alt="play">
   <p>High Score : ${highScoreFlappy} </p> <p> Use Space Bar To JUMP</p>`;
 }
+
 //handling the key interaction
 function handleKey(e) {
   let code = e.code;
