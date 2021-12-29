@@ -45,7 +45,7 @@ function moveBird(){
 
 }
 
-//function that animates the death of bird
+//function that animates the death of bird 
 function birdDeath(){
   const bird = _('.bird');
   bird.style.transform = "rotate(90deg)";

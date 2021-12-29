@@ -11,6 +11,10 @@ function gamePlay() {
 
     time += 0.001;
 
+    if(score>highScoreFlappy){
+      highScoreFlappy = score;
+    }
+
     window.requestAnimationFrame(gamePlay);
     scoreContainer.innerText = `${score}`;
   }
@@ -25,7 +29,8 @@ function gameOver() {
   startBtn.classList.remove('hide');
   document.removeEventListener("keydown", handleKey);
   localStorage.setItem('highestScore', highScoreFlappy);
-  startBtn.innerHTML = `<p>Your Score : ${score} </p><p>Restart</p> <img src="assets/images/startButton.png" alt="play">`;
+  startBtn.innerHTML = `<p>Your Score : ${score} </p><p>Restart</p> <img src="assets/images/startButton.png" alt="play">
+  <p>High Score : ${highScoreFlappy} </p> <p> Use Space Bar To JUMP</p>`;
 }
 //handling the key interaction
 function handleKey(e) {
