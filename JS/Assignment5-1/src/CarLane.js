@@ -15,10 +15,10 @@ function chkHighScore(){
 startBtn.addEventListener('click', () => {
     chkHighScore();
     gameStart = true;
+    gameSpeed = INITIAL_SPEED;
     gameContainer.innerHTML = "";
     startBtn.classList.add('hide');
-    gameContainer.classList.remove('hide');
-    
+    gameContainer.classList.remove('hide');    
 
     window.requestAnimationFrame(gamePlay);
 

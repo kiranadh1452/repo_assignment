@@ -22,7 +22,7 @@ startBtn.addEventListener('click', () => {
     startBtn.classList.add('hide');
     gameContainer.innerHTML = "";
 
-    gameSpeed = 8;
+    gameSpeed = INITIAL_SPEED;
     gameStart = true;
     gameScore = 0;
 

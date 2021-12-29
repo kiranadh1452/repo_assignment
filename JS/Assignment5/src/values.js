@@ -1,4 +1,5 @@
 // factor by which the speed of the game will increase
+const INITIAL_SPEED = 8;
 const SPEED_FACTOR = 0.007;
 
 /* For audio
