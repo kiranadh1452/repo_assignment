@@ -1,0 +1,74 @@
+*{
+  margin: 0; 
+  padding: 0; 
+}
+
+.border{
+  border: solid 1px black;
+}
+
+.hide{
+  display: none;
+}
+
+.main-container{
+  position: relative;
+  width: 100%;
+  margin-top: 1%;
+}
+
+.start-btn{
+  padding: 2%;
+  position: absolute;
+  border: none;
+  outline: none;
+  /* background-color: white; */
+  background: transparent;
+  border-radius: 5px;
+  color: white;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+  cursor: pointer;
+  font-size: 150%;
+  box-shadow: 5px 5px 15px 15px white;
+}
+
+.game-wrapper{
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  background: url('../assets/images/bgImage.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.bird{
+  position: absolute;
+  background-image: url('../assets/images/bird2.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.pipeUp{
+  background: url('../assets/images/upPipe.png');
+}
+.pipeDown{
+  background: url('../assets/images/downPipe.png');
+}
+
+.pipe{
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.score-container{
+  position: absolute;
+  top: 5vh;
+  left: 48vw;
+  color: white;
+  font-size: 50px;
+  z-index: 3;
+}
