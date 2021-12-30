@@ -35,7 +35,9 @@ function moveBird(){
     birdElement.style.transform = `rotate(${birdVelocity*5}deg)`;
   }
 
-  if(checkWallCollision(birdElement)) gameOver();
+  if(checkWallCollision(birdElement)){    
+    gameOver();
+  }
 
   //Switches between the sprites of the bird for flapping effect
   indexBird = (indexBird+ FLAPPING_EFFECT_SPEED) % (birdImg.length-1);
@@ -50,6 +52,7 @@ function moveBird(){
 
 //function that animates the death of bird 
 function birdDeath(){
+
   const bird = _('.bird');
   bird.style.transform = "rotate(90deg)";
 

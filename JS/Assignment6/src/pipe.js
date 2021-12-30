@@ -59,6 +59,7 @@ function movePipe(bird){
     if(pipe.x < -1*(PIPE_WIDTH-1)){
       pipe.x = GAME_CONTAINER_WIDTH-(PIPE_WIDTH-1);
       score += 0.5;
+      soundPoint.play();
     }
 
     pipe.x -= INIT_GAME_SPEED;

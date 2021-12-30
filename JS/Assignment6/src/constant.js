@@ -20,6 +20,11 @@ const GAME_CONTAINER_HEIGHT = 800;
 const GAME_CONTAINER_WIDTH =  1400;
 const MAX_PIPE_HEIGHT = GAME_CONTAINER_HEIGHT - PIPE_GAP;
 
+//sound effects
+const soundDead = new Audio('./assets/sounds/dead.wav');
+const soundFlap = new Audio('./assets/sounds/flap.wav');
+const soundPoint = new Audio('./assets/sounds/point.wav');
+
 //different elements
 const startBtn = _('.start-btn');
 const restartBtn = _('.restart-btn');
