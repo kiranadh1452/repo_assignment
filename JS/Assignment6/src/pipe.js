@@ -1,14 +1,14 @@
 //adding pipes to the scene
 function addPipeToScene(){
-  for(let i=0; i<3; i++){
-    pipePosArray.push((gameContainerWidth/3) * (i+1));
-  }
+  // for(let i=0; i<3; i++){
+  //   pipePosArray.push((GAME_CONTAINER_WIDTH/3) * (i+1));
+  // }
   
-  for(let count = 0; count< pipeCountScene; count++){
-    const pipe1Len = getRandomInt(150, maxPipeHeight*0.92);
+  for(let count = 0; count< PIPE_COUNT; count++){
+    const pipe1Len = getRandomInt(150, MAX_PIPE_HEIGHT*0.92);
 
     addPipe(pipe1Len, "top");
-    addPipe(maxPipeHeight - pipe1Len, "bottom");
+    addPipe(MAX_PIPE_HEIGHT - pipe1Len, "bottom");
   
     indexPipe = (indexPipe+1) % pipePosArray.length;
   }
@@ -35,7 +35,7 @@ function addPipe(length, alignment) {
   }
 
   pipe.x = pipePosArray[indexPipe];
-  pipe.style.width = `${pipeWidth}px`;
+  pipe.style.width = `${PIPE_WIDTH}px`;
   pipe.style.height = `${length}px`;
   pipe.style.left = `${pipe.x}px`;
   gameContainer.appendChild(pipe);
@@ -56,8 +56,8 @@ function movePipe(bird){
       gameOver();
     }
 
-    if(pipe.x < -1*(pipeWidth-1)){
-      pipe.x = gameContainerWidth-(pipeWidth-1);
+    if(pipe.x < -1*(PIPE_WIDTH-1)){
+      pipe.x = GAME_CONTAINER_WIDTH-(PIPE_WIDTH-1);
       score += 0.5;
     }
 

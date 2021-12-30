@@ -1,4 +1,4 @@
-//check if a local highscore exists.
+//checks if a local highscore exists.
 function chkHighScore() {
   try {
     highScoreFlappy = localStorage.getItem('highestScore');

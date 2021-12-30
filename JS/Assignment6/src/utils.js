@@ -51,7 +51,7 @@ function checkCollision(element1, element2){
 function checkWallCollision(item){
   const y = item.posY;
   
-  if( y<=0 || (y+birdHeight) >= gameContainerHeight){
+  if( y<=0 || (y+BIRD_HEIGHT) >= GAME_CONTAINER_HEIGHT){
 
     return true;
   }

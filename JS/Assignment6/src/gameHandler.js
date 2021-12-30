@@ -1,4 +1,4 @@
-//game begun 
+//function to handle the gameplay
 function gamePlay() {
   let birdElement = _('.bird');
 
@@ -20,7 +20,7 @@ function gamePlay() {
 
 }
 
-//when game has ended
+//function to handle the bird death
 function gameOver() {
   time = 0;
   birdDeath();

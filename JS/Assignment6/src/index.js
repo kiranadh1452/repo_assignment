@@ -4,7 +4,7 @@ startBtn.addEventListener('click', () => {
   chkHighScore();
 
   score = 0;
-  time = initTime;
+  time = INIT_TIME;
   gameStart = true;
   gameSpeed = INIT_GAME_SPEED;
   birdVelocity = INIT_VELOCITY;
@@ -17,4 +17,3 @@ startBtn.addEventListener('click', () => {
   window.requestAnimationFrame(gamePlay);
 
 });
-

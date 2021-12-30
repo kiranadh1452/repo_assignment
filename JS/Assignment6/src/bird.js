@@ -1,15 +1,18 @@
+let indexBird = 0;
+const birdImg = ["bird1","bird2","bird3"]; //array containing the sprites of the bird
+
 //creates the flappy bird
 function createFlappyBird() {
   const birdElement = document.createElement('div');
 
-  birdElement.posY = initPosY;
-  birdElement.posX = initPosX;
+  birdElement.posY = INIT_POSY;
+  birdElement.posX = INIT_POSX;
 
   birdElement.style.top = `${birdElement.posY}px`;
   birdElement.style.left = `${birdElement.posX}px`;
   birdElement.setAttribute('class', 'bird');
-  birdElement.style.width = `${birdWidth}px`;
-  birdElement.style.height = `${birdHeight}px`;
+  birdElement.style.width = `${BIRD_WIDTH}px`;
+  birdElement.style.height = `${BIRD_HEIGHT}px`;
 
   gameContainer.appendChild(birdElement);
 }
@@ -18,10 +21,12 @@ function createFlappyBird() {
 function moveBird(){
   const birdElement = _('.bird');
   
+  // v = u + g*t
   birdVelocity += (ACCLERATION_G *time);
   birdElement.posY += birdVelocity;
   birdElement.style.top = `${birdElement.posY}px`;
 
+  //rotate the bird as per its moving direction
   if(birdVelocity > 0){
     birdElement.style.transform = `rotate(${birdVelocity*2.5}deg)`;
   }
@@ -32,14 +37,15 @@ function moveBird(){
 
   if(checkWallCollision(birdElement)) gameOver();
 
-  // else{
-  //   setInterval(() => {
-  //     let urlValue = birdImage[indexBird];
-  //     birdElement.style.backgroundImage = `${urlValue}`;
-  //     indexBird = (indexBird+1) % birdImage.length;
-  //   }, 1000);
-  // }
+  //Switches between the sprites of the bird for flapping effect
+  indexBird = (indexBird+ FLAPPING_EFFECT_SPEED) % (birdImg.length-1);
+  let intIndexBird = Math.floor(indexBird);
 
+  birdElement.style.backgroundImage = `url('./assets/images/${birdImg[intIndexBird]}.png')`;
+  birdElement.style.backgroundRepeat = "no-repeat";
+  birdElement.style.backgroundRepeat = "100% 100%";
+  birdElement.style.width = `${BIRD_WIDTH}px`;
+  birdElement.style.height = `${BIRD_HEIGHT}px`;  
 }
 
 //function that animates the death of bird 
@@ -49,14 +55,13 @@ function birdDeath(){
 
   let deathFrame = window.requestAnimationFrame(birdDeath);
 
-  if(bird.posY >= gameContainerHeight-birdHeight){
+  if(bird.posY >= GAME_CONTAINER_HEIGHT-BIRD_HEIGHT){
     cancelAnimationFrame(deathFrame);
     return;
   }
 
   bird.posY += 20;
-  bird.posY = Math.min(bird.posY, gameContainerHeight-birdHeight);
-  bird.style.top = `${bird.posY}px`;
-
-  
+  bird.posY = Math.min(bird.posY, GAME_CONTAINER_HEIGHT-BIRD_HEIGHT);
+  bird.style.top = `${bird.posY}px`;  
 }
+
