@@ -1,8 +1,5 @@
 //adding pipes to the scene
 function addPipeToScene(){
-  // for(let i=0; i<3; i++){
-  //   pipePosArray.push((GAME_CONTAINER_WIDTH/3) * (i+1));
-  // }
   
   for(let count = 0; count< PIPE_COUNT; count++){
     const pipe1Len = getRandomInt(150, MAX_PIPE_HEIGHT*0.92);
@@ -13,7 +10,6 @@ function addPipeToScene(){
     indexPipe = (indexPipe+1) % pipePosArray.length;
   }
 }
-
 
 
 /*
