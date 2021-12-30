@@ -2,9 +2,9 @@
 
 //movement related
 const INIT_VELOCITY = 2;
-const INIT_GAME_SPEED = 2;
+const INIT_GAME_SPEED = 3;
 const SPEED_FACTOR = 0.002;
-FLAPPING_EFFECT_SPEED = 0.1;
+const FLAPPING_EFFECT_SPEED = 0.1;
 const ACCLERATION_G = 9.8065;
 
 //dimension related

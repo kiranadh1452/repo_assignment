@@ -43,7 +43,7 @@ function handleKey(e) {
   if (code == "Space") {
     birdVelocity = 0;
     time = 0;
-    birdVelocity = -4;
+    birdVelocity = -(2*INIT_VELOCITY);
     soundFlap.play();   
   }
 
