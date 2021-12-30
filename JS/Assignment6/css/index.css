@@ -43,6 +43,7 @@
   background: url('../assets/images/bgImage.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  box-shadow: 5px 5px 150px 150px rgb(104, 103, 103);
 }
 
 .bird{
